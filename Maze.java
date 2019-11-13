@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Maze {
 	
 	public static void main(String[] args) {
-		Maze maze = new Maze(6,3);
+		Maze maze = new Maze(10,30);
 		System.out.println(maze);
 	}
 	
@@ -95,22 +95,22 @@ public class Maze {
 	public String toString() {
 		StringBuilder res = new StringBuilder();
 		for ( int k = 0 ; k < maze[0].length ; ++k ) {
-			res.append("##");
+			res.append("WW");
 		}
-		res.append("#");
+		res.append("W");
 		res.append("\n");
 		for ( int i = 0 ; i < maze.length ; ++i ) {
-			res.append("#");
+			res.append("W");
 			for ( int k = 0 ; k < maze[0].length ; ++k ) {
 				if ( i == 0 && k == 0  )
-					res.append(maze[i][k].toString(0).replace('O', 'S')); 
+					res.append(maze[i][k].toString(0).replace('R', 'S')); 
 				else if ( i == maze.length-1 && k == maze[0].length-1  )
-					res.append("E#");
+					res.append("EW");
 				else
 					res.append(maze[i][k].toString(0));
 			}
 			res.append("\n");
-			res.append("#");
+			res.append("W");
 			for ( int k = 0 ; k < maze[0].length ; ++k ) {
 				res.append(maze[i][k].toString(1));
 			}

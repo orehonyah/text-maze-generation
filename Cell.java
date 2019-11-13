@@ -56,10 +56,10 @@ public class Cell {
 	public String toString( int t ) {
 		String res = "";
 		if ( t == 0 ) {
-			res += "O"+(right==null?"#":"-");
+			res += "R"+(right==null?"W":"B");
 		}
 		else {
-			res += (down==null?"#":"|")+"#";
+			res += (down==null?"W":"B")+"W";
 		}
 		return res;
 	}
